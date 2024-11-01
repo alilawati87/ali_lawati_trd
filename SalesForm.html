@@ -2,26 +2,30 @@
 <html>
 <head>
   <title>Ali_Lawati_Trd - Sales Form</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- For mobile optimization -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> <!-- Mobile optimization -->
   <style>
     /* Basic styles for readability and mobile optimization */
     body {
       font-family: Arial, sans-serif;
-      margin: 20px;
+      margin: 10px;
+      font-size: 18px; /* Increased font size for better readability */
     }
     h2 {
       color: #333;
       text-align: center;
+      font-size: 24px;
     }
     label {
       display: block;
       margin-top: 15px;
+      font-weight: bold;
     }
     input, select, textarea {
       width: 100%;
-      padding: 12px;
+      padding: 15px; /* Increased padding for touch screens */
       margin-top: 5px;
       box-sizing: border-box;
+      font-size: 18px; /* Increased font size */
     }
     button {
       margin-top: 20px;
@@ -31,18 +35,10 @@
       color: #fff;
       border: none;
       cursor: pointer;
+      font-size: 20px; /* Increased font size */
     }
     button:hover {
       background-color: #095a8a;
-    }
-    /* Responsive design for mobile screens */
-    @media only screen and (max-width: 600px) {
-      body {
-        margin: 10px;
-      }
-      input, select, textarea, button {
-        font-size: 16px;
-      }
     }
     /* Hide credit amount field by default */
     #creditAmountField {
@@ -56,6 +52,7 @@
     .radio-group label {
       flex: 1;
       text-align: center;
+      font-weight: normal;
     }
     .checkbox-group {
       display: flex;
@@ -64,6 +61,16 @@
     }
     .checkbox-group input[type="checkbox"] {
       margin-right: 10px;
+      transform: scale(1.5); /* Make checkbox larger */
+    }
+    /* Ensure touch targets are large enough */
+    input[type="radio"] {
+      transform: scale(1.5); /* Make radio buttons larger */
+      margin-right: 5px;
+    }
+    /* Prevent zoom on input focus */
+    input, select, textarea {
+      font-size: 16px;
     }
   </style>
   <script>
