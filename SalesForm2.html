@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ali_Lawati_Trd - Sales Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> <!-- Mobile optimization -->
+  <style>
+    /* Basic styles for readability and mobile optimization */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 10px;
+      font-size: 18px; /* Increased font size for better readability */
+    }
+    h2 {
+      color: #333;
+      text-align: center;
+      font-size: 24px;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 15px; /* Increased padding for touch screens */
+      margin-top: 5px;
+      box-sizing: border-box;
+      font-size: 18px; /* Increased font size */
+    }
+    button {
+      margin-top: 20px;
+      padding: 15px 20px;
+      width: 100%;
+      background-color: #0b79bf;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-size: 20px; /* Increased font size */
+    }
+    button:hover {
+      background-color: #095a8a;
+    }
+    /* Hide credit amount field by default */
+    #creditAmountField {
+      display: none;
+    }
+    .radio-group {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 10px;
+    }
+    .radio-group label {
+      flex: 1;
+      text-align: center;
+      font-weight: normal;
+    }
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      margin-top: 15px;
+    }
+    .checkbox-group input[type="checkbox"] {
+      margin-right: 10px;
+      transform: scale(1.5); /* Make checkbox larger */
+    }
+    /* Ensure touch targets are large enough */
+    input[type="radio"] {
+      transform: scale(1.5); /* Make radio buttons larger */
+      margin-right: 5px;
+    }
+    /* Prevent zoom on input focus */
+    input, select, textarea {
+      font-size: 16px;
+    }
+  </style>
+  <script>
+    function toggleCreditAmount() {
+      var creditCheckbox = document.getElementById("onCredit");
+      var creditAmountField = document.getElementById("creditAmountField");
+      if (creditCheckbox.checked) {
+        creditAmountField.style.display = "block";
+      } else {
+        creditAmountField.style.display = "none";
+      }
+    }
+  </script>
+</head>
+<body>
+  <h2>Ali_Lawati_Trd - Sales</h2>
+  <form action="#" method="post">
+    <!-- Labour Charge -->
+    <label for="labourCharge">Labour Charge:</label>
+    <input type="number" id="labourCharge" name="labourCharge" step="0.01" value="0" required>
+
+    <!-- Material Amount -->
+    <label for="materialAmount">Material Amount:</label>
+    <input type="number" id="materialAmount" name="materialAmount" step="0.01" value="0" required>
+
+    <!-- Material Description -->
+    <label for="materialDescription">Material Description:</label>
+    <textarea id="materialDescription" name="materialDescription" rows="4"></textarea>
+
+    <!-- Payment Method -->
+    <label>Payment Method:</label>
+    <div class="radio-group">
+      <label>
+        <input type="radio" name="paymentMethod" value="Mobile" required> Mobile
+      </label>
+      <label>
+        <input type="radio" name="paymentMethod" value="Cash"> Cash
+      </label>
+      <label>
+        <input type="radio" name="paymentMethod" value="POS"> POS
+      </label>
+    </div>
+
+    <!-- On Credit Checkbox -->
+    <div class="checkbox-group">
+      <input type="checkbox" id="onCredit" name="onCredit" onclick="toggleCreditAmount()">
+      <label for="onCredit">On Credit</label>
+    </div>
+
+    <!-- Credit Amount -->
+    <div id="creditAmountField">
+      <label for="creditAmount">Credit Amount:</label>
+      <input type="number" id="creditAmount" name="creditAmount" step="0.01" value="0">
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit">Submit Sale</button>
+  </form>
+</body>
+</html>
