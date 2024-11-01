@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ali_Lawati_Trd - Purchase Form</title>
+  <style>
+    /* Basic styles for readability */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h2 {
+      color: #333;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      box-sizing: border-box;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #0b79bf;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #095a8a;
+    }
+    .part-item {
+      margin-bottom: 10px;
+    }
+    .part-item label {
+      display: inline-block;
+      width: auto;
+      margin-right: 10px;
+    }
+    .part-item input[type="number"] {
+      width: 80px;
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Ali_Lawati_Trd - Purchase Form</h2>
+  <form action="#" method="post">
+    <!-- Supplier Information -->
+    <label for="supplierName">Supplier Name:</label>
+    <input type="text" id="supplierName" name="supplierName" required>
+
+    <!-- Parts Purchased -->
+    <label>Parts Purchased:</label>
+    <!-- Example parts; replace with actual parts from your inventory -->
+    <div class="part-item">
+      <input type="checkbox" id="part1" name="partsPurchased" value="part1">
+      <label for="part1">Part 1</label>
+      <input type="number" name="quantity_part1" min="1" value="1" placeholder="Quantity">
+      <input type="number" name="unitCost_part1" step="0.01" placeholder="Unit Cost">
+    </div>
+    <div class="part-item">
+      <input type="checkbox" id="part2" name="partsPurchased" value="part2">
+      <label for="part2">Part 2</label>
+      <input type="number" name="quantity_part2" min="1" value="1" placeholder="Quantity">
+      <input type="number" name="unitCost_part2" step="0.01" placeholder="Unit Cost">
+    </div>
+    <!-- Add more parts as needed -->
+
+    <!-- Financial Details -->
+    <label for="totalCost">Total Cost:</label>
+    <input type="number" id="totalCost" name="totalCost" step="0.01" required>
+
+    <label for="amountPaid">Amount Paid:</label>
+    <input type="number" id="amountPaid" name="amountPaid" step="0.01" required>
+
+    <label for="paymentMethod">Payment Method:</label>
+    <select id="paymentMethod" name="paymentMethod" required>
+      <option value="Cash">Cash</option>
+      <option value="Card">Card</option>
+      <option value="Bank Transfer">Bank Transfer</option>
+      <option value="Credit">Credit</option>
+    </select>
+
+    <!-- Purchase Date -->
+    <label for="purchaseDate">Date of Purchase:</label>
+    <input type="date" id="purchaseDate" name="purchaseDate" value="" required>
+
+    <!-- Additional Notes -->
+    <label for="notes">Additional Notes (Optional):</label>
+    <textarea id="notes" name="notes" rows="4"></textarea>
+
+    <!-- Submit Button -->
+    <button type="submit">Submit Purchase</button>
+  </form>
+</body>
+</html>
+

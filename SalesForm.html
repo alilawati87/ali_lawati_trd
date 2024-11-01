@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ali_Lawati_Trd - Sales Form</title>
+  <style>
+    /* Basic styles for readability */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h2 {
+      color: #333;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      box-sizing: border-box;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #0b79bf;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #095a8a;
+    }
+    .part-item {
+      margin-bottom: 10px;
+    }
+    .part-item label {
+      display: inline-block;
+      width: auto;
+      margin-right: 10px;
+    }
+    .part-item input[type="number"] {
+      width: 60px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Ali_Lawati_Trd - Sales Form</h2>
+  <form action="#" method="post">
+    <!-- Customer Information -->
+    <label for="customerName">Customer Name (Optional):</label>
+    <input type="text" id="customerName" name="customerName">
+
+    <label for="customerPhone">Customer Phone Number (Optional):</label>
+    <input type="tel" id="customerPhone" name="customerPhone">
+
+    <!-- Labour Charge -->
+    <label for="labourCharge">Labour Charge:</label>
+    <input type="number" id="labourCharge" name="labourCharge" step="0.01" value="0" required>
+
+    <!-- Parts Sold -->
+    <label>Parts Sold:</label>
+    <!-- Example parts; replace with actual parts from your inventory -->
+    <div class="part-item">
+      <input type="checkbox" id="part1" name="partsSold" value="part1">
+      <label for="part1">Part 1 (Price: $10)</label>
+      <input type="number" name="quantity_part1" min="1" value="1">
+    </div>
+    <div class="part-item">
+      <input type="checkbox" id="part2" name="partsSold" value="part2">
+      <label for="part2">Part 2 (Price: $15)</label>
+      <input type="number" name="quantity_part2" min="1" value="1">
+    </div>
+    <!-- Add more parts as needed -->
+
+    <!-- Payment Details -->
+    <label for="paymentMethod">Payment Method:</label>
+    <select id="paymentMethod" name="paymentMethod" required>
+      <option value="Cash">Cash</option>
+      <option value="Card">Card</option>
+      <option value="Credit">Credit</option>
+    </select>
+
+    <!-- Additional Notes -->
+    <label for="notes">Additional Notes (Optional):</label>
+    <textarea id="notes" name="notes" rows="4"></textarea>
+
+    <!-- Submit Button -->
+    <button type="submit">Submit Sale</button>
+  </form>
+</body>
+</html>
+
