@@ -56,7 +56,7 @@
     }
     .checkbox-group {
       display: flex;
-      align-items: center;
+      align-items: left;
       margin-top: 15px;
     }
     .checkbox-group input[type="checkbox"] {
@@ -72,6 +72,11 @@
     input, select, textarea {
       font-size: 16px;
     }
+      #creditAmountField {
+    display: flex;
+    align-items: center;
+  }
+
   </style>
   <script>
     function toggleCreditAmount() {
@@ -90,15 +95,15 @@
   <form action="#" method="post">
     <!-- Labour Charge -->
     <label for="labourCharge">Labour Charge:</label>
-    <input type="number" id="labourCharge" name="labourCharge" step="0.01" value="0" required>
+    <input type="number" id="labourCharge" name="labourCharge" step="0.001" value="0" required>
 
     <!-- Material Amount -->
     <label for="materialAmount">Material Amount:</label>
-    <input type="number" id="materialAmount" name="materialAmount" step="0.01" value="0" required>
+    <input type="number" id="materialAmount" name="materialAmount" step="0.001" value="0" required>
 
     <!-- Material Description -->
     <label for="materialDescription">Material Description:</label>
-    <textarea id="materialDescription" name="materialDescription" rows="4"></textarea>
+    <textarea id="materialDescription" name="materialDescription" rows="2"></textarea>
 
     <!-- Payment Method -->
     <label>Payment Method:</label>
@@ -123,7 +128,7 @@
     <!-- Credit Amount -->
     <div id="creditAmountField">
       <label for="creditAmount">Credit Amount:</label>
-      <input type="number" id="creditAmount" name="creditAmount" step="0.01" value="0">
+      <input type="number" id="creditAmount" name="creditAmount" step="0.001" value="0">
     </div>
 
     <!-- Submit Button -->
