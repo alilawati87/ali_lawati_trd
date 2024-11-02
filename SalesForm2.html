@@ -56,13 +56,18 @@
       font-weight: normal;
     }
 
-    .checkbox-group input[type="checkbox"] {
-      display: flex;
-      justify-content: flex-start;
-      display: inline;
-      transform: scale(1.5); /* Make checkbox larger */
-      align-items: left;
-    }
+/* Add this CSS block or modify the existing .checkbox-group */
+.checkbox-group {
+  display: flex;
+  align-items: center; /* Vertically centers the items */
+}
+
+/* Update the checkbox styling */
+.checkbox-group input[type="checkbox"] {
+  transform: scale(1.5); /* Increase the scale to make the checkbox larger */
+  margin-right: 10px;    /* Adds space between the checkbox and label */
+}
+
     /* Ensure touch targets are large enough */
     input[type="radio"] {
       transform: scale(1.5); /* Make radio buttons larger */
@@ -116,11 +121,12 @@
     </div>
     <br>
 
-    <!-- On Credit Checkbox -->
-    <div class="checkbox-group">
-       <label for="onCredit">On Credit </label>
-      <input type="checkbox" id="onCredit" name="onCredit" onclick="toggleCreditAmount()">
-    </div>
+<!-- On Credit Checkbox -->
+<div class="checkbox-group">
+  <input type="checkbox" id="onCredit" name="onCredit" onclick="toggleCreditAmount()">
+  <label for="onCredit">On Credit</label>
+</div>
+
 
     <!-- Credit Amount -->
     <div id="creditAmountField">
