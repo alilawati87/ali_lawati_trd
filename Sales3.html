@@ -127,7 +127,7 @@ input[type="radio"] {
 </head>
 <body>
   <h2>Ali_Lawati_Trd - Sales</h2>
-  <form action="#" method="post" id="SalesForm">
+  <form action="https://script.google.com/macros/s/AKfycbxadAHvBS27gOT_8GO3grfAoNpPFnAKI4XJt-_UNnSyb1er5tXIpYgDsomkdVDh_fvE/exec" method="post" id="SalesForm">
     <!-- Labour Charge -->
     <label for="labourCharge">Labour Charge:</label>
     <input type="number" id="labourCharge" name="labourCharge" step="0.001">
@@ -173,47 +173,7 @@ input[type="radio"] {
     <button type="reset">Reset</button>
   </form>
   
-  <script>
-    // Replace this URL with your actual Web App URL from Apps Script
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbyb30qtggGKoXScM8vov8Fj6so2jfmVtiuykFK9cSLRumAQ35tFBLIfqNse9fxlHyE_pw/exec';
 
-    document.getElementById('SalesForm').addEventListener('submit', function(event) {
-      event.preventDefault(); // Prevent the default form submission
-
-      // Collect form data
-      const formData = {
-        labourCharge: document.getElementById('labourCharge').value,
-        materialAmount: document.getElementById('materialAmount').value,
-        materialDescription: document.getElementById('materialDescription').value,
-        paymentMethod: document.querySelector('input[name="paymentMethod"]:checked').value,
-        //onCredit: document.getElementById('onCredit').value,
-        creditAmount: document.getElementById('creditAmount').value
-      };
-
-      // Send the data to Google Sheets via Apps Script
-      fetch(scriptURL, {
-        method: 'POST',
-        mode: 'cors',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
-      })
-      .then(response => response.json())
-      .then(data => {
-        if (data.result === 'success') {
-          alert('Form submitted successfully!');
-          document.getElementById('SalesForm').reset(); // Reset the form
-        } else {
-          alert('Error submitting form: ' + JSON.stringify(data.error));
-        }
-      })
-      .catch(error => {
-        console.error('Error!', error.message);
-        alert('There was an error submitting the form.');
-      });
-    });
-  </script>
 
 </body>
 </html>
