@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ali_Lawati_Trd - Sales Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> <!-- Mobile optimization -->
+   <style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 10px auto;
+  font-size: 18px;
+  max-width: 600px;
+}
+
+h2 {
+  color: #333;
+  text-align: center;
+  font-size: 24px;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+input, select, textarea {
+  width: 100%;
+  max-width: 100%;
+  padding: 15px;
+  margin-top: 5px;
+  box-sizing: border-box;
+  font-size: 18px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 15px 20px;
+  width: 100%;
+  max-width: 100%;
+  background-color: #0b79bf;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+button:hover {
+  background-color: #095a8a;
+}
+
+#creditAmountField {
+  display: none;
+}
+
+    .radio-group {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 10px;
+    }
+    .radio-group label {
+      flex: 1;
+      text-align: center;
+      font-weight: normal;
+    }
+
+/* Update the .checkbox-group CSS */
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  /* Remove or comment out the following line if it exists */
+  /* justify-content: space-around; */
+  /* Add this line to align items to the left */
+  justify-content: flex-start;
+  margin-top: 10px;
+}
+
+
+.checkbox-group input[type="checkbox"] {
+  transform: scale(1.5);
+  margin-right: 10px;
+}
+
+input[type="radio"] {
+  transform: scale(1.5);
+  margin-right: 5px;
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 16px;
+  }
+
+  input, select, textarea {
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  button {
+    font-size: 18px;
+    padding: 12px 16px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .radio-group label {
+    flex: 1 1 45%;
+  }
+}
+
+
+  </style>
+  
+
+   <script>
+    function toggleCreditAmount() {
+      var creditCheckbox = document.getElementById("onCredit");
+      var creditAmountField = document.getElementById("creditAmountField");
+      if (creditCheckbox.checked) {
+        creditAmountField.style.display = "block";
+      } else {
+        creditAmountField.style.display = "none";
+      }
+    }
+  </script>
+</head>
+<body>
+  <h2>Ali_Lawati_Trd - Sales</h2>
+  <form action="#" method="post" id="salesForm">
+    <!-- Labour Charge -->
+    <label for="labourCharge">Labour Charge:</label>
+    <input type="number" id="labourCharge" name="labourCharge" step="0.001">
+
+    <!-- Material Amount -->
+    <label for="materialAmount">Material Amount:</label>
+    <input type="number" id="materialAmount" name="materialAmount" step="0.001">
+
+    <!-- Material Description -->
+    <label for="materialDescription">Material Description:</label>
+    <textarea id="materialDescription" name="materialDescription" rows="2"></textarea>
+
+    <!-- Payment Method -->
+    <label>Payment Method:</label>
+    <div class="radio-group">
+      <label>
+        <input type="radio" id="paymentMethodMobile"  name="paymentMethod" value="Mobile"> Mobile
+      </label>
+      <label>
+        <input type="radio" id="paymentMethodCash" name="paymentMethod" value="Cash"> Cash
+      </label>
+      <label>
+        <input type="radio" id="paymentMethodPOS" name="paymentMethod" value="POS"> POS
+      </label>
+    </div>
+    <br>
+
+<!-- On Credit Checkbox -->
+<div class="checkbox-group">
+  <label for="onCredit">On Credit</label>
+  <input type="checkbox" id="onCredit" name="onCredit" onclick="toggleCreditAmount()">
+  
+</div>
+
+
+    <!-- Credit Amount -->
+    <div id="creditAmountField">
+      <input type="number" id="creditAmount" name="creditAmount" step="0.001">
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit">Submit Sale</button>
+    <button type="reset">Reset</button>
+  </form>
+  
+  <script>
+    // Replace this URL with your actual Web App URL from Apps Script
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxMr3RmvEDiykbkUa66-5LDunzKfHS7dXhP1PdcughpL5Gpkaz7f-uoUEszmoWgjU9v/exec';
+
+    document.getElementById('SalesForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the default form submission
+
+      // Collect form data
+      const formData = {
+        labourCharge: document.getElementById('labourCharge').value,
+        materialAmount: document.getElementById('materialAmount').value,
+        materialDescription: document.getElementById('materialDescription').value,
+        paymentMethod: document.querySelector('input[name="paymentMethod"]:checked').value,
+        onCredit: document.getElementById('onCredit').value,
+        creditAmount: document.getElementById('creditAmount').value
+      };
+
+      // Send the data to Google Sheets via Apps Script
+      fetch(scriptURL, {
+        method: 'POST',
+        mode: 'cors',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.result === 'success') {
+          alert('Form submitted successfully!');
+          document.getElementById('SalesForm').reset(); // Reset the form
+        } else {
+          alert('Error submitting form: ' + JSON.stringify(data.error));
+        }
+      })
+      .catch(error => {
+        console.error('Error!', error.message);
+        alert('There was an error submitting the form.');
+      });
+    });
+  </script>
+
+</body>
+</html>
