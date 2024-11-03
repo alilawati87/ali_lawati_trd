@@ -1,4 +1,3 @@
-
     function toggleCreditAmount() {
       var creditCheckbox = document.getElementById("onCredit");
       var creditAmountField = document.getElementById("creditAmountField");
@@ -29,9 +28,10 @@ function submitSale(event) {
     return false;
   } 
   
-  // Reset the form after validation
-  resetForm();
-  customReset(); // Call this if you want to include the custom reset functionality
-  
   return true; // Allow the form submission to proceed
 }
+function formSubmissionComplete() {
+    // Reset the form
+    resetForm();
+    customReset();
+  }
