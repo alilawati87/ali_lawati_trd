@@ -31,6 +31,7 @@ function submitSale(event) {
   return true; // Allow the form submission to proceed
 }
 function formSubmissionComplete() {
+    setTimeout(function() {window.print();}, 500);
     // Reset the form
     resetForm();
     customReset();
