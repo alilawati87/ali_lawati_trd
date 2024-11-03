@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sales Ali_Lawati_Trd - Sales Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> <!-- Mobile optimization -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    function toggleCreditAmount() {
+      var creditCheckbox = document.getElementById("onCredit");
+      var creditAmountField = document.getElementById("creditAmountField");
+      if (creditCheckbox.checked) {
+        creditAmountField.style.display = "block";
+      } else {
+        creditAmountField.style.display = "none";
+      }
+    }
+    function resetForm() {
+    document.getElementById('SalesForm').reset(); // Ensure the form has an id
+  }
+    function customReset() {
+    // Hide the creditAmountField again
+    document.getElementById('creditAmountField').style.display = "none";
+
+    // Uncheck the creditCheckbox
+    document.getElementById('creditCheckbox').checked = false;
+  }
+function submitSale(event) {
+  var labourCharge = parseFloat(document.getElementById('labourCharge').value) || 0;
+  var materialAmount = parseFloat(document.getElementById('materialAmount').value) || 0;
+
+  // Check if both inputs are less than or equal to zero
+  if (labourCharge <= 0 && materialAmount <= 0) {
+    alert("Labour Charge and Material Amount can't both be zero or less or empty");
+    event.preventDefault();
+    return false;
+  } 
+  
+  // Reset the form after validation
+  resetForm();
+  customReset(); // Call this if you want to include the custom reset functionality
+  
+  return true; // Allow the form submission to proceed
+}
+
+</script>
+   
+</head>
+<body>
+  <h2>Ali_Lawati_Trd 2 - Sales</h2>
+  <form action="https://script.google.com/macros/s/AKfycbxadAHvBS27gOT_8GO3grfAoNpPFnAKI4XJt-_UNnSyb1er5tXIpYgDsomkdVDh_fvE/exec" method="post" id="SalesForm"target="hidden_iframe" onsubmit="submitSale(event)">
+    <!-- Labour Charge -->
+    <label for="labourCharge">Labour Charge:</label>
+    <input type="number" id="labourCharge" name="labourCharge" step="0.001">
+
+    <!-- Material Amount -->
+    <label for="materialAmount">Material Amount:</label>
+    <input type="number" id="materialAmount" name="materialAmount" step="0.001">
+
+    <!-- Material Description -->
+    <label for="materialDescription">Material Description:</label>
+    <textarea id="materialDescription" name="materialDescription" rows="2"></textarea>
+
+    <!-- Payment Method -->
+    <label>Payment Method:</label>
+    <div class="radio-group">
+      <label>
+        <input type="radio" id="paymentMethodMobile"  name="paymentMethod" value="Mobile"> Mobile
+      </label>
+      <label>
+        <input type="radio" id="paymentMethodCash" name="paymentMethod" value="Cash"> Cash
+      </label>
+      <label>
+        <input type="radio" id="paymentMethodPOS" name="paymentMethod" value="POS"> POS
+      </label>
+    </div>
+    <br>
+
+<!-- On Credit Checkbox -->
+<div class="checkbox-group">
+  <label for="onCredit">On Credit</label>
+  <input type="checkbox" id="onCredit" name="onCredit" onclick="toggleCreditAmount()">
+  
+</div>
+
+
+    <!-- Credit Amount -->
+    <div id="creditAmountField">
+      <input type="number" id="creditAmount" name="creditAmount" step="0.001">
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" >Submit Sale</button>
+    <button type="reset" onclick="customReset()">Reset</button>
+    <iframe id="hidden_iframe" class="hidden" name="hidden_iframe"></iframe>
+  </form>
+  
+
+
+</body>
+</html>
