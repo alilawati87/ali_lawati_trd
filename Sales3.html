@@ -143,13 +143,13 @@ input[type="radio"] {
     // Check if both inputs are empty
     if (labourCharge === "" && materialAmount === "") {
       alert("Labour Charge and Material Amount are both zero");
-      event.preventDefault(); return false;} return true;
+      event.preventDefault(); return false;} return true; setTimeout(resetForm, 500);;
    } 
   </script>
 </head>
 <body>
   <h2>Ali_Lawati_Trd - Sales</h2>
-  <form action="https://script.google.com/macros/s/AKfycbxadAHvBS27gOT_8GO3grfAoNpPFnAKI4XJt-_UNnSyb1er5tXIpYgDsomkdVDh_fvE/exec" method="post" id="SalesForm"target="hidden_iframe" onsubmit="setTimeout(resetForm, 500)">
+  <form action="https://script.google.com/macros/s/AKfycbxadAHvBS27gOT_8GO3grfAoNpPFnAKI4XJt-_UNnSyb1er5tXIpYgDsomkdVDh_fvE/exec" method="post" id="SalesForm"target="hidden_iframe" onsubmit="submitSale(event)">
     <!-- Labour Charge -->
     <label for="labourCharge">Labour Charge:</label>
     <input type="number" id="labourCharge" name="labourCharge" step="0.001">
@@ -191,7 +191,7 @@ input[type="radio"] {
     </div>
 
     <!-- Submit Button -->
-    <button type="submit" onsubmit="submitSale(event)">Submit Sale</button>
+    <button type="submit" >Submit Sale</button>
     <button type="reset" onclick="customReset()">Reset</button>
     <iframe id="hidden_iframe" class="hidden" name="hidden_iframe"></iframe>
   </form>
