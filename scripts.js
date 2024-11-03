@@ -27,12 +27,16 @@ function submitSale(event) {
     event.preventDefault();
     return false;
   } 
-  
+  formSubmitted = true;
   return true; // Allow the form submission to proceed
 }
 function formSubmissionComplete() {
-    setTimeout(function() {window.print();}, 500);
-    // Reset the form
+  if (formSubmitted) {
+    setTimeout(function() {
+      window.print();
+    }, 500);
     resetForm();
     customReset();
+    formSubmitted = false;  // Reset the flag after submission
   }
+}
