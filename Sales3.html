@@ -128,7 +128,14 @@ input[type="radio"] {
     }
     function resetForm() {
     document.getElementById('SalesForm').reset(); // Ensure the form has an id
-  } 
+  }
+    function customReset() {
+    // Hide the creditAmountField again
+    document.getElementById('creditAmountField').style.display = "none";
+
+    // Uncheck the creditCheckbox
+    document.getElementById('creditCheckbox').checked = false;
+  }
   </script>
 </head>
 <body>
@@ -176,7 +183,7 @@ input[type="radio"] {
 
     <!-- Submit Button -->
     <button type="submit">Submit Sale</button>
-    <button type="reset">Reset</button>
+    <button type="reset" onclick="customReset()">Reset</button>
     <iframe id="hidden_iframe" class="hidden" name="hidden_iframe"></iframe>
   </form>
   
