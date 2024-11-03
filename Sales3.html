@@ -136,6 +136,18 @@ input[type="radio"] {
     // Uncheck the creditCheckbox
     document.getElementById('creditCheckbox').checked = false;
   }
+    function validateForm() {
+    var labourCharge = document.getElementById('labourCharge').value;
+    var materialAmount = document.getElementById('materialAmount').value;
+    
+    // Check if both inputs are empty
+    if (labourCharge === "" && materialAmount === "") {
+      alert("Labour Charge and Material Amount are both zero");
+      return false;  // Prevent the form from submitting
+    }
+    
+    return true;  // Allow the form to submit if validation is passed
+  }
   </script>
 </head>
 <body>
