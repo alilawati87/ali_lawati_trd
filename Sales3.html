@@ -136,7 +136,11 @@ input[type="radio"] {
     // Uncheck the creditCheckbox
     document.getElementById('creditCheckbox').checked = false;
   }
-    function validateForm() {
+    window.onload = function() {
+  document.getElementById('myForm').addEventListener('submit', validateForm);
+  document.getElementById('resetButton').addEventListener('click', customReset);
+};
+    function validateForm(event) {
     var labourCharge = document.getElementById('labourCharge').value;
     var materialAmount = document.getElementById('materialAmount').value;
     
