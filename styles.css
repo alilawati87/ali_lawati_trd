@@ -36,7 +36,8 @@ button {
   width: 100%;
   max-width: 100%;
   background-color: #7600c3;
-  color: #e4b813;
+  color: #fff; 
+  /*color: #e4b813; */
   border: none;
   cursor: pointer;
   font-size: 20px;
