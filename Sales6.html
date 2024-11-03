@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sales Ali_Lawati_Trd - Sales Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> <!-- Mobile optimization -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css">
+  <script src="scripts.js"></script>
+  
+   
+</head>
+<body>
+  <h2>Ali_Lawati_Trd - Sales</h2>
+  <form action="https://script.google.com/macros/s/AKfycbxadAHvBS27gOT_8GO3grfAoNpPFnAKI4XJt-_UNnSyb1er5tXIpYgDsomkdVDh_fvE/exec" method="post" id="SalesForm"target="hidden_iframe" onsubmit="submitSale(event)">
+    <!-- Labour Charge -->
+    <label for="labourCharge">Labour Charge:</label>
+    <input type="number" id="labourCharge" name="labourCharge" step="0.001">
+
+    <!-- Material Amount -->
+    <label for="materialAmount">Material Amount:</label>
+    <input type="number" id="materialAmount" name="materialAmount" step="0.001">
+
+    <!-- Material Description -->
+    <label for="materialDescription">Material Description:</label>
+    <textarea id="materialDescription" name="materialDescription" rows="2"></textarea>
+
+    <!-- Payment Method -->
+    <label>Payment Method:</label>
+    <div class="radio-group">
+      <label>
+        <input type="radio" id="paymentMethodMobile"  name="paymentMethod" value="Mobile"> Mobile
+      </label>
+      <label>
+        <input type="radio" id="paymentMethodCash" name="paymentMethod" value="Cash"> Cash
+      </label>
+      <label>
+        <input type="radio" id="paymentMethodPOS" name="paymentMethod" value="POS"> POS
+      </label>
+    </div>
+    <br>
+
+<!-- On Credit Checkbox -->
+<div class="checkbox-group">
+  <label for="onCredit">On Credit</label>
+  <input type="checkbox" id="onCredit" name="onCredit" onclick="toggleCreditAmount()">
+  
+</div>
+
+
+    <!-- Credit Amount -->
+    <div id="creditAmountField">
+      <input type="number" id="creditAmount" name="creditAmount" step="0.001">
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" >Submit Sale</button>
+    <button type="reset" onclick="customReset()">Reset</button>
+    <iframe id="hidden_iframe" class="hidden" name="hidden_iframe" onload="formSubmissionComplete()" ></iframe>
+  </form>
+  
+
+
+</body>
+</html>
