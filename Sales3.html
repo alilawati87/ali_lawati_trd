@@ -147,6 +147,7 @@ input[type="radio"] {
     // Check if both inputs are empty
     if (labourCharge === "" && materialAmount === "") {
       alert("Labour Charge and Material Amount are both zero");
+      event.preventDefault();
       return false;  // Prevent the form from submitting
     }
     
