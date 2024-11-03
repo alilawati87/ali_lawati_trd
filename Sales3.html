@@ -136,11 +136,7 @@ input[type="radio"] {
     // Uncheck the creditCheckbox
     document.getElementById('creditCheckbox').checked = false;
   }
-    window.onload = function() {
-  document.getElementById('myForm').addEventListener('submit', validateForm);
-  document.getElementById('resetButton').addEventListener('click', customReset);
-};
-    function validateForm(event) {
+   function submitSale(event) {
     var labourCharge = document.getElementById('labourCharge').value;
     var materialAmount = document.getElementById('materialAmount').value;
     
@@ -148,11 +144,7 @@ input[type="radio"] {
     if (labourCharge === "" && materialAmount === "") {
       alert("Labour Charge and Material Amount are both zero");
       event.preventDefault();
-      return false;  // Prevent the form from submitting
-    }
-    
-    return true;  // Allow the form to submit if validation is passed
-  }
+   } 
   </script>
 </head>
 <body>
@@ -199,7 +191,7 @@ input[type="radio"] {
     </div>
 
     <!-- Submit Button -->
-    <button type="submit">Submit Sale</button>
+    <button type="submit" onsubmit="submitSale(event)">Submit Sale</button>
     <button type="reset" onclick="customReset()">Reset</button>
     <iframe id="hidden_iframe" class="hidden" name="hidden_iframe"></iframe>
   </form>
