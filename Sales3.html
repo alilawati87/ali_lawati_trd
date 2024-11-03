@@ -142,7 +142,7 @@ function submitSale(event) {
 
   // Check if both inputs are less than or equal to zero
   if (labourCharge <= 0 && materialAmount <= 0) {
-    alert("Labour Charge and Material Amount are both zero or less");
+    alert("Labour Charge and Material Amount can't both be zero or less or empty");
     event.preventDefault();
     return false;
   } 
