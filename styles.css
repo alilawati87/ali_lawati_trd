@@ -56,7 +56,7 @@ button:hover {
       display: flex;
       justify-content: space-around;
       margin-top: 10px;
-      border-color: #7600c3;
+      accent-color: #7600c3;
     }
     .radio-group label {
       flex: 1;
