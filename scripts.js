@@ -13,7 +13,8 @@ function toggleCreditAmount() {
   
       if (printCheckbox.checked) {
         Print_Dummy = true; // Use lowercase 'true'
-      }}
+      }else{Print_Dummy = false;}
+    }
     function resetForm() {
     document.getElementById('SalesForm').reset(); // Ensure the form has an id
   }
