@@ -9,7 +9,7 @@ function toggleCreditAmount() {
       }
     }
     function togglePrint() {
-      var printCheckbox = document.getElementById("PrintCheckbox"); // Corrected ID
+      var printCheckbox = document.getElementById("PrintReceipt"); // Corrected ID
   
       if (printCheckbox.checked) {
         Print_Dummy = true; // Use lowercase 'true'
