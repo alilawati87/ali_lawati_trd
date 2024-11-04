@@ -3,7 +3,7 @@
     top: 0;
     right: 0;
     height: 10%; /* Make it full height */
-    background-color: #007bff;
+    background-color: #7600c3;
     border: none;
     cursor: pointer;
     z-index: 1000; /* Ensure it stays above other elements */
@@ -14,6 +14,7 @@
 /* Adjust width for larger screens */
 @media (min-width: 600px) {
     .toggle-button {
+        background-color: #7600c3;
         width: 5%; /* Make the button 5% wide on larger screens */
     }
 }
