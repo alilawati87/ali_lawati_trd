@@ -42,11 +42,16 @@
     </div>
     <br>
 
-<!-- On Credit Checkbox and Print Checkbox -->
+<!-- On Credit Checkbox and Print Checkbox in the same line -->
 <div class="checkbox-group" id="checkboxContainer">
   <span>
     On Credit
     <input type="checkbox" id="onCredit" name="onCredit" onclick="toggleCreditAmount()" class="mycheckbox">
+  </span>
+
+  <span style="margin-left: 20px;">
+    Print
+    <input type="checkbox" id="PrintReceipt" name="PrintReceipt" onclick="togglePrint()" class="mycheckbox">
   </span>
 </div>
 
@@ -55,13 +60,6 @@
   <input type="number" id="creditAmount" name="creditAmount" step="0.001">
 </div>
 
-<!-- Print Checkbox, initially in the same line, but moves below when On Credit is checked -->
-<div id="printCheckboxContainer">
-  <span style="margin-top: 10px;">
-    Print
-    <input type="checkbox" id="PrintReceipt" name="PrintReceipt" onclick="togglePrint()" class="mycheckbox">
-  </span>
-</div>
 
 
 
