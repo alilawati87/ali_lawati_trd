@@ -40,10 +40,20 @@ function submitSale(event) {
 }
 function formSubmissionComplete() {
   if (formSubmitted) {
-  if (Print_Dummy){
-    setTimeout(function() {window.print();}, 500);
-    resetForm();
-    customReset();
-    } else{setTimeout(function() {resetForm(); customReset();}, 500);} 
+    if (Print_Dummy) {
+      // Delay the print and form reset to allow printing first
+      setTimeout(function() {
+        window.print();    // Print the form
+        resetForm();       // Reset the form after printing
+        customReset();     // Custom reset after printing
+      }, 500);
+    } else {
+      // Reset the form without printing after 500 ms
+      setTimeout(function() {
+        resetForm();
+        customReset();
+      }, 500);
+    }
   }
 }
+
