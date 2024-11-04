@@ -23,7 +23,9 @@ label {
 
 label2 {
   display: inline-flex;
-  align-items: left; /* Ensures the text and checkbox are vertically aligned */
+  margin-top: 10px;
+  margin-bottom: 5px;
+  /* align-items: left; /* Ensures the text and checkbox are vertically aligned */
 }
 
 
