@@ -24,7 +24,6 @@ function toggleCreditAmount() {
     document.getElementById('creditAmountField').style.display = "none";
     // Uncheck the creditCheckbox
     document.getElementById('creditCheckbox').checked = false;
-document.getElementById("PrintReceipt").checked = false;
           // Reset Dummy Print Variable
   }
 function submitSale(event) {
