@@ -21,12 +21,6 @@ label {
   font-weight: bold;
 }
 
-span {
-  display: inline-flex;
-  margin-top: 10px;
-  margin-bottom: 5px;
-  /* align-items: left; /* Ensures the text and checkbox are vertically aligned */
-}
 
 
 input, select, textarea {
