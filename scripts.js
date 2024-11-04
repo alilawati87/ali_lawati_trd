@@ -1,4 +1,5 @@
-    function toggleCreditAmount() {
+var Print_Dummy = false;
+function toggleCreditAmount() {
       var creditCheckbox = document.getElementById("onCredit");
       var creditAmountField = document.getElementById("creditAmountField");
       if (creditCheckbox.checked) {
@@ -42,7 +43,6 @@ function formSubmissionComplete() {
     setTimeout(function() {window.print();}, 500);
     resetForm();
     customReset();
-    } else{setTimeout(function() {resetForm(); customReset();}} 
+    } else{setTimeout(function() {resetForm(); customReset();}}} 
   }
-}
 }
