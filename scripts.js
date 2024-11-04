@@ -40,10 +40,10 @@ function submitSale(event) {
 function formSubmissionComplete() {
   if (formSubmitted) {
     setTimeout(function() {
-      if (Print_Dummy) {window.print();}
-      resetForm();
-    customReset();
+      window.print();
     }, 500);
+    resetForm();
+    customReset();
     formSubmitted = false;  // Reset the flag after submission
   }
 }
