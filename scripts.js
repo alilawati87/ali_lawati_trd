@@ -18,7 +18,6 @@ function toggleCreditAmount() {
     }
     function resetForm() {
     document.getElementById('SalesForm').reset(); // Ensure the form has an id
-          var Print_Dummy = false;
   }
     function customReset() {
     // Hide the creditAmountField again
@@ -26,7 +25,6 @@ function toggleCreditAmount() {
     // Uncheck the creditCheckbox
     document.getElementById('creditCheckbox').checked = false;
           // Reset Dummy Print Variable
-          var Print_Dummy = false;
   }
 function submitSale(event) {
   var labourCharge = parseFloat(document.getElementById('labourCharge').value) || 0;
@@ -50,6 +48,7 @@ function formSubmissionComplete() {
         resetForm();       // Reset the form after printing
         customReset();     // Custom reset after printing
       }, 500);
+            var Print_Dummy = false;
     } else {
       // Reset the form without printing after 500 ms
       setTimeout(function() {
