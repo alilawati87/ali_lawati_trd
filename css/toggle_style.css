@@ -1,17 +1,24 @@
 .toggle-button {
     position: fixed;
-    top: 1px;
-    right: 1px;
-    padding: 1px 2px;
-    /*background-color: #007bff; */
-    color: white;
+    top: 0;
+    right: 0;
+    height: 100%; /* Make it full height */
+    background-color: #007bff;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
-    z-index: 1000; /* Stay above other elements */
-    margin: 0; /* Ensure no margin is added */
+    z-index: 1000; /* Ensure it stays above other elements */
+    transition: background-color 0.3s ease;
+    width: 5px; /* Default width for small screens */
 }
 
+/* Adjust width for larger screens */
+@media (min-width: 600px) {
+    .toggle-button {
+        width: 5%; /* Make the button 5% wide on larger screens */
+    }
+}
+
+/* Hover effect */
 .toggle-button:hover {
     background-color: #0056b3;
 }
