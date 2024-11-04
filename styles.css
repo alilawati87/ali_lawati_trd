@@ -128,8 +128,8 @@ input[type="checkbox"] {
 }
 .mycheckbox {
   transform: scale(4); /* Doubles the size of the checkbox */
-    margin-right: 15ch;
-  margin-left: 15vh;
+    margin-right: 15px;
+  margin-left: 15px;
    accent-color: #7600c3; 
   
 }
