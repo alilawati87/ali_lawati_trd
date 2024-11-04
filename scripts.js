@@ -21,9 +21,10 @@ function toggleCreditAmount() {
     function customReset() {
     // Hide the creditAmountField again
     document.getElementById('creditAmountField').style.display = "none";
-
     // Uncheck the creditCheckbox
     document.getElementById('creditCheckbox').checked = false;
+          // Reset Dummy Print Variable
+          var Print_Dummy = false;
   }
 function submitSale(event) {
   var labourCharge = parseFloat(document.getElementById('labourCharge').value) || 0;
