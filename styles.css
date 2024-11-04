@@ -21,7 +21,7 @@ label {
   font-weight: bold;
 }
 
-label2 {
+span {
   display: inline-flex;
   margin-top: 10px;
   margin-bottom: 5px;
