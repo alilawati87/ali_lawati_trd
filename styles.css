@@ -118,6 +118,7 @@ input[type="radio"] {
   display: inline-flex;     /* Ensure that the text and checkbox are on the same line */
   align-items: center;      /* Aligns the text and checkbox vertically */
   margin-top: 10px;
+  gap: 10px;
   margin-bottom: 5px;
 }
 
