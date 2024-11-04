@@ -77,7 +77,6 @@ button:hover {
 
 
 input[type="checkbox"] {
-  margin-right: 10px;
   accent-color: #7600c3;
   border-color: #7600c3;
   margin-top: 10px;
@@ -124,9 +123,12 @@ input[type="radio"] {
 
 /* Ensure all checkboxes are styled properly */
 input[type="checkbox"] {
-  margin-right: 10px;       /* Adds space between checkbox and text */
+   /* Adds space between checkbox and text */
   accent-color: #7600c3;    /* Optional: Sets the checkbox color */
 }
 .mycheckbox {
   transform: scale(2); /* Doubles the size of the checkbox */
+    margin-right: 10px;
+  margin-left: 10px;
+  
 }
