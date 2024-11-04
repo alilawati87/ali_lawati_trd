@@ -2,12 +2,12 @@
     position: fixed;
     top: 0;
     right: 0;
-    height: 100%; /* Make it full height */
+    height: 10%; /* Make it full height */
     background-color: #007bff;
     border: none;
     cursor: pointer;
     z-index: 1000; /* Ensure it stays above other elements */
-    transition: background-color 0.3s ease;
+    /*transition: background-color 0.3s ease; */
     width: 5px; /* Default width for small screens */
 }
 
