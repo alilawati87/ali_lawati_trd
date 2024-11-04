@@ -128,7 +128,7 @@ input[type="checkbox"] {
     /* Optional: Sets the checkbox color */
 }
 .mycheckbox {
-  transform: scale(4); /* Doubles the size of the checkbox */
+  transform: scale(2.5); /* Doubles the size of the checkbox */
     margin-right: 15px;
   margin-left: 15px;
    accent-color: #7600c3; 
