@@ -42,24 +42,24 @@
     </div>
     <br>
 
-<div class="checkbox-group">
-  <!-- On Credit Checkbox -->
+<!-- On Credit Checkbox and Print Checkbox in the same line -->
+<div class="checkbox-group" id="checkboxContainer">
   <span>
     On Credit
     <input type="checkbox" id="onCredit" name="onCredit" onclick="toggleCreditAmount()" class="mycheckbox">
   </span>
 
-  <!-- Print Checkbox -->
-  <span>
+  <span style="margin-left: 20px;">
     Print
     <input type="checkbox" id="PrintReceipt" name="PrintReceipt" onclick="togglePrint()" class="mycheckbox">
   </span>
 </div>
 
-<!-- Credit Amount Field -->
+<!-- Credit Amount Field, hidden initially -->
 <div id="creditAmountField" style="display: none;">
   <input type="number" id="creditAmount" name="creditAmount" step="0.001">
 </div>
+
 
 
 
