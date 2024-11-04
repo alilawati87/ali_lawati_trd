@@ -43,6 +43,6 @@ function formSubmissionComplete() {
     setTimeout(function() {window.print();}, 500);
     resetForm();
     customReset();
-    } else{setTimeout(function() {resetForm(); customReset();}}} 
+    } else{setTimeout(function() {resetForm(); customReset();}, 500);} 
   }
 }
