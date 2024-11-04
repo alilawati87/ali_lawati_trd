@@ -1,13 +1,18 @@
 var Print_Dummy = false;
 function toggleCreditAmount() {
-      var creditCheckbox = document.getElementById("onCredit");
-      var creditAmountField = document.getElementById("creditAmountField");
-      if (creditCheckbox.checked) {
-        creditAmountField.style.display = "block";
-      } else {
-        creditAmountField.style.display = "none";
-      }
-    }
+  var creditCheckbox = document.getElementById("onCredit");
+  var creditAmountField = document.getElementById("creditAmountField");
+  var checkboxContainer = document.getElementById("checkboxContainer");
+
+  // Show or hide the credit amount field and adjust the layout accordingly
+  if (creditCheckbox.checked) {
+    creditAmountField.style.display = "block"; // Show the credit amount field
+    checkboxContainer.style.display = "block"; // Move the second checkbox to a new line
+  } else {
+    creditAmountField.style.display = "none";  // Hide the credit amount field
+    checkboxContainer.style.display = "flex";  // Keep the second checkbox on the same line
+  }
+}
     function togglePrint() {
       var printCheckbox = document.getElementById("PrintReceipt"); // Corrected ID
   
