@@ -18,6 +18,7 @@ function toggleCreditAmount() {
     }
     function resetForm() {
     document.getElementById('SalesForm').reset(); // Ensure the form has an id
+          var Print_Dummy = false;
   }
     function customReset() {
     // Hide the creditAmountField again
