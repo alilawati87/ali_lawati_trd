@@ -68,7 +68,8 @@ button:hover {
 /* Update the .checkbox-group CSS */
 .checkbox-group {
   display: flex;
-  align-items: center;
+  /*align-items: center; */
+  align-items: left;
   /* Remove or comment out the following line if it exists */
   /* justify-content: space-around; */
   /* Add this line to align items to the left */
