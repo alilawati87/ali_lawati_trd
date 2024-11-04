@@ -49,13 +49,13 @@ function formSubmissionComplete() {
         resetForm();       // Reset the form after printing
         customReset();     // Custom reset after printing
       }, 500);
-            var Print_Dummy = false;
+          
     } else {
       // Reset the form without printing after 500 ms
       setTimeout(function() {
         resetForm();
         customReset();
-      }, 500);  var Print_Dummy = false;
+      }, 500);  
     }
   }
 }
