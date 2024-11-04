@@ -55,7 +55,7 @@ function formSubmissionComplete() {
       setTimeout(function() {
         resetForm();
         customReset();
-      }, 500);
+      }, 500);  var Print_Dummy = false;
     }
   }
 }
