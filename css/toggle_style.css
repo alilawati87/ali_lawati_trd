@@ -1,5 +1,5 @@
 .toggle-button {
-    position: absolute;
+    position: fixed;
     top: 10px;
     right: 10px;
     padding: 10px 20px;
@@ -8,6 +8,8 @@
     border: none;
     cursor: pointer;
     border-radius: 5px;
+    z-index: 1000; /* Stay above other elements */
+    margin: 0; /* Ensure no margin is added */
 }
 
 .toggle-button:hover {
