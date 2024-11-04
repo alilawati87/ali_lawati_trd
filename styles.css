@@ -129,3 +129,6 @@ input[type="checkbox"] {
   margin-right: 10px;       /* Adds space between checkbox and text */
   accent-color: #7600c3;    /* Optional: Sets the checkbox color */
 }
+.mycheckbox {
+  transform: scale(2); /* Doubles the size of the checkbox */
+}
