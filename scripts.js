@@ -8,12 +8,11 @@
       }
     }
     function togglePrint() {
-      var Print_Dummy = false; // Use lowercase 'false'
       var printCheckbox = document.getElementById("PrintCheckbox"); // Corrected ID
   
       if (printCheckbox.checked) {
         Print_Dummy = true; // Use lowercase 'true'
-      }
+      }}
     function resetForm() {
     document.getElementById('SalesForm').reset(); // Ensure the form has an id
   }
@@ -39,11 +38,11 @@ function submitSale(event) {
 }
 function formSubmissionComplete() {
   if (formSubmitted) {
-    setTimeout(function() {
-      window.print();
-    }, 500);
+  if (Print_Dummy){
+    setTimeout(function() {window.print();}, 500);
     resetForm();
     customReset();
-    formSubmitted = false;  // Reset the flag after submission
+    } else{setTimeout(function() {resetForm(); customReset();}} 
   }
+}
 }
