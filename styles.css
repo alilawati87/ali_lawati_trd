@@ -118,3 +118,20 @@ input[type="radio"] {
     flex: 1 1 45%;
   }
 }
+
+
+
+/* Use span with a class to style the checkboxes and text */
+.checkbox-group {
+  display: inline-flex;     /* Ensure that the text and checkbox are on the same line */
+  align-items: center;      /* Aligns the text and checkbox vertically */
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+/* Ensure all checkboxes are styled properly */
+input[type="checkbox"] {
+  transform: scale(1.5);    /* Makes the checkboxes larger */
+  margin-right: 10px;       /* Adds space between checkbox and text */
+  accent-color: #7600c3;    /* Optional: Sets the checkbox color */
+}
