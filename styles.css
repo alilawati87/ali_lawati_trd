@@ -65,20 +65,21 @@ button:hover {
       font-weight: normal;
     }
 
-/* Update the .checkbox-group CSS */
+/* Update the .checkbox-group CSS
 .checkbox-group { 
   /* display: flex;
   align-items: left;
-  justify-content: flex-start; */
-  margin-top: 10px;
-}
+  justify-content: flex-start;
+  -margin-top: 10px;
+} */
 
 
-.checkbox-group input[type="checkbox"] {
+input[type="checkbox"] {
   transform: scale(1.5);
   margin-right: 10px;
   accent-color: #7600c3;
   border-color: #7600c3;
+  margin-top: 10px;
 }
 
 input[type="radio"] {
