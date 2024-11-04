@@ -77,7 +77,6 @@ button:hover {
 
 
 input[type="checkbox"] {
-  transform: scale(1.5);
   margin-right: 10px;
   accent-color: #7600c3;
   border-color: #7600c3;
