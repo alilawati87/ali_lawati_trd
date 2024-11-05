@@ -47,8 +47,9 @@ function formSubmissionComplete() {
         window.print();    // Print the form
         resetForm();       // Reset the form after printing
         customReset();     // Custom reset after printing
+            document.getElementById("PrintReceipt").checked = true;
       }, 500);
-          document.getElementById("PrintReceipt").checked = true;
+          
           
     } else {
       // Reset the form without printing after 500 ms
