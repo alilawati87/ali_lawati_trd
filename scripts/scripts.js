@@ -41,15 +41,50 @@ function submitSale(event) {
 }
 function formSubmissionComplete() {
   if (formSubmitted) {
+      var labourCharge = document.getElementById("labourCharge").value;
+    var materialAmount = document.getElementById("materialAmount").value;
+
+    // Check if labourCharge or materialAmount is empty, and replace with "-"
+    if (labourCharge === "") {
+        labourCharge = "-";
+    }
+    if (materialAmount === "") {
+        materialAmount = "-";
+    }
+        
     if (Print_Dummy) {
-      // Delay the print and form reset to allow printing first
+      const mainContent = document.getElementById('main-content');
+      const alternateContent = document.getElementById('alternate-content');
+      const cssLink = document.getElementById('css-link');
+
+        // Delay hiding main content and loading external HTML and CSS by 0.5 seconds
       setTimeout(function() {
-        window.print();    // Print the form
-        resetForm();       // Reset the form after printing
-        customReset();     // Custom reset after printing
-            // Delay setting the checkbox to true after the reset
-            
-      }, 500);
+        mainContent.style.display = 'none';
+        cssLink.href = 'receipt/receiptStyle.css';
+
+        fetch('receipt/receipt.html')
+          .then(response => response.text())
+          .then(data => {
+            alternateContent.innerHTML = data;
+            alternateContent.style.display = 'block';
+
+            // Delay printing by an additional 1 second (total 1.5 seconds delay)
+            setTimeout(function() {
+              window.print();    // Print the receipt
+
+              // Switch back to original content and reset the form after printing
+              alternateContent.style.display = 'none';
+              mainContent.style.display = 'block';
+              cssLink.href = 'styles.css'; // Switch back to original CSS
+              resetForm();       // Reset the form
+              customReset();     // Custom reset after printing
+            }, 1000); // Delay for printing (1 second)
+          });
+
+      }, 1100); // Delay for content switch (0.5 seconds)
+    }
+  }
+}
           setTimeout(function() {
         document.getElementById("PrintReceipt").checked = true;
       }, 600);  // 500ms + 100ms delay
