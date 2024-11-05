@@ -54,7 +54,9 @@ function formSubmissionComplete() {
       setTimeout(function() {
         resetForm();
         customReset();
-      }, 500);  
+      }, 500); 
+          document.getElementById("PrintReceipt").checked = true;
+
     }
   }
 }
