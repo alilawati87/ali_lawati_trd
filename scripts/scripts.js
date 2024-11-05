@@ -88,7 +88,7 @@ function formSubmissionComplete() {
       setTimeout(function() {
         document.getElementById("PrintReceipt").checked = true;
 
-      }, 1100);  // 500ms + 100ms delay
+      }, 100);  // 500ms + 100ms delay
     } else {
       // Reset the form without printing after 500 ms
       setTimeout(function() {
