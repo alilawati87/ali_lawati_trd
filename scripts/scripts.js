@@ -77,6 +77,7 @@ function formSubmissionComplete() {
               alternateContent.style.display = 'none';
               mainContent.style.display = 'block';
               cssLink.href = 'styles.css'; // Switch back to original CSS
+            cssLink.href = 'css/toggle_style.css';
               resetForm();       // Reset the form
               customReset();     // Custom reset after printing
             }, 1000); // Delay for printing (1 second)
