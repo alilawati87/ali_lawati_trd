@@ -96,7 +96,7 @@ function formSubmissionComplete() {
               newScript.id = 'toggle-script';
               newScript.src = 'scripts/toggle_script.js';
               document.body.appendChild(newScript); // Append the new script
-      }, 1100);  // 500ms + 100ms delay
+      }, 1500);  // 500ms + 100ms delay
     } else {
       // Reset the form without printing after 500 ms
       setTimeout(function() {
