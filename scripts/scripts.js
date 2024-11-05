@@ -41,23 +41,23 @@ function submitSale(event) {
 }
 function formSubmissionComplete() {
   if (formSubmitted) {
-      var labourCharge = document.getElementById("labourCharge").value;
+    var labourCharge = document.getElementById("labourCharge").value;
     var materialAmount = document.getElementById("materialAmount").value;
 
     // Check if labourCharge or materialAmount is empty, and replace with "-"
     if (labourCharge === "") {
-        labourCharge = "-";
+      labourCharge = "-";
     }
     if (materialAmount === "") {
-        materialAmount = "-";
+      materialAmount = "-";
     }
-        
+
     if (Print_Dummy) {
       const mainContent = document.getElementById('main-content');
       const alternateContent = document.getElementById('alternate-content');
       const cssLink = document.getElementById('css-link');
 
-        // Delay hiding main content and loading external HTML and CSS by 0.5 seconds
+      // Delay hiding main content and loading external HTML and CSS by 0.5 seconds
       setTimeout(function() {
         mainContent.style.display = 'none';
         cssLink.href = 'receipt/receiptStyle.css';
@@ -80,25 +80,19 @@ function formSubmissionComplete() {
               customReset();     // Custom reset after printing
             }, 1000); // Delay for printing (1 second)
           });
+      }, 500); // Delay for content switch (0.5 seconds)
 
-      }, 1100); // Delay for content switch (0.5 seconds)
-    }
-  }
-}
-          setTimeout(function() {
+      // Additional delay to check the PrintReceipt checkbox
+      setTimeout(function() {
         document.getElementById("PrintReceipt").checked = true;
-      }, 600);  // 500ms + 100ms delay
-          
-          
+      }, 1100);  // 500ms + 100ms delay
     } else {
       // Reset the form without printing after 500 ms
       setTimeout(function() {
         resetForm();
         customReset();
-            
-      }, 500); 
-          
-
+      }, 500);
     }
   }
 }
+
