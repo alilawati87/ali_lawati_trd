@@ -62,11 +62,6 @@ function formSubmissionComplete() {
         mainContent.style.display = 'none';
         cssLink.href = 'receipt/receiptStyle.css';
 
-            // Remove the toggle_script.js if it's already loaded to avoid duplicates
-        var existingScript = document.getElementById('toggle-script');
-        if (existingScript) {
-          existingScript.parentNode.removeChild(existingScript);
-        }
 
         fetch('receipt/receipt.html')
           .then(response => response.text())
@@ -91,11 +86,7 @@ function formSubmissionComplete() {
       // Additional delay to check the PrintReceipt checkbox
       setTimeout(function() {
         document.getElementById("PrintReceipt").checked = true;
-            // Create a new script element and append it to the body
-              var newScript = document.createElement('script');
-              newScript.id = 'toggle-script';
-              newScript.src = 'scripts/toggle_script.js';
-              document.body.appendChild(newScript); // Append the new script
+
       }, 1500);  // 500ms + 100ms delay
     } else {
       // Reset the form without printing after 500 ms
