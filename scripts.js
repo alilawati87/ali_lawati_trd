@@ -47,7 +47,11 @@ function formSubmissionComplete() {
         window.print();    // Print the form
         resetForm();       // Reset the form after printing
         customReset();     // Custom reset after printing
-            document.getElementById("PrintReceipt").checked = true;
+            // Delay setting the checkbox to true after the reset
+setTimeout(function() {
+  document.getElementById("PrintReceipt").checked = true;
+}, 100);  // Add a small delay to ensure the form has reset
+
       }, 500);
           
           
