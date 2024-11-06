@@ -1,3 +1,9 @@
+function loadReceiptScript() {
+  const script = document.createElement('script');
+  script.src = 'receipt/receiptScript.js';
+  document.head.appendChild(script); // or document.body.appendChild(script);
+}
+
 var Print_Dummy = false;
 function toggleCreditAmount() {
       var creditCheckbox = document.getElementById("onCredit");
@@ -44,6 +50,8 @@ function formSubmissionComplete() {
     if (Print_Dummy) {
       // Delay the print and form reset to allow printing first
       setTimeout(function() {
+            loadReceiptScript() 
+
         window.print();    // Print the form
         resetForm();       // Reset the form after printing
         customReset();     // Custom reset after printing
