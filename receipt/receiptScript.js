@@ -5,7 +5,7 @@
   <script>
     function generatePDF() {
       // Get the element to print
-      const element = document.getElementById('invoice-Pos');
+      const element = document.getElementById('invoice-POS');
 
       // Define options for html2pdf
       const opt = {
