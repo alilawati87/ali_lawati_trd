@@ -77,7 +77,7 @@ function formSubmissionComplete() {
             // Delay printing by an additional 1 second (total 1.5 seconds delay)
             setTimeout(function() {
                   loadReceiptScript();
-              window.print();    // Print the receipt
+              // window.print();    // Print the receipt
 
               // Switch back to original content and reset the form after printing
               alternateContent.style.display = 'none';
